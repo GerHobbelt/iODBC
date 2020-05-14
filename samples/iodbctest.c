@@ -74,6 +74,11 @@
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifdef _WIN32
+    /* Windows check - works for Windows 64-bit and 32-bit compiler */
+    #include <windows.h>
+#endif /* _WIN32 */
+#define DISABLE_IODBC  // unconditional test, should work for Microsoft Windows and UnixODBC
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -83,7 +88,9 @@
 #include <sql.h>
 #include <sqlext.h>
 #include <sqlucode.h>
+#ifndef DISABLE_IODBC
 #include <iodbcext.h>
+#endif /* DISABLE_IODBC */
 
 /*
  *  Prototypes
@@ -222,11 +229,13 @@ ODBC_Connect (char *connStr)
 #endif
 
 
+#ifdef SQL_APPLICATION_NAME
   /*
    *  Set the application name
    */
   SQLSetConnectOption (hdbc, SQL_APPLICATION_NAME,
 	(SQLULEN) TEXT ("odbctest"));
+#endif /* SQL_APPLICATION_NAME */
 
 
   /*

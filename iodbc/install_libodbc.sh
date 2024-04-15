@@ -110,6 +110,8 @@ then
 	libiodbc.so.*)
 	    rm -f libodbc.so
 	    ln -s $lib libodbc.so
+	    rm -f libodbc.so.2
+	    ln -s libodbc.so libodbc.so.2
 	    ;;
 	libiodbc.sl.*)
 	    rm -f libodbc.sl

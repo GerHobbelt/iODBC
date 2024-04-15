@@ -3180,7 +3180,7 @@ SQLColAttribute_Internal (
 	}
       if (isSz)
 	{
-	  int len = STRLEN (szval), len1;
+	  size_t len = STRLEN (szval), len1;
 	  len1 = len > BufferLength ? BufferLength - 1 : len;
 	  if (CharacterAttributePtr)
 	    {

@@ -98,7 +98,7 @@ trace_SQLConnect (int trace_leave, int retcode,
   _trace_string (szDSN, cbDSN, NULL, TRACE_INPUT);
   _trace_stringlen ("SQLSMALLINT", cbDSN);
   _trace_string (szUID, cbUID, NULL, TRACE_INPUT);
-  _trace_stringlen ("SQLSMALLINT", cbDSN);
+  _trace_stringlen ("SQLSMALLINT", cbUID);
   _trace_string (szAuthStr, SQL_NTS, NULL, TRACE_INPUT);
   _trace_stringlen ("SQLSMALLINT", cbAuthStr);
 }
@@ -126,7 +126,7 @@ trace_SQLConnectW (int trace_leave, int retcode,
   _trace_string_w (szDSN, cbDSN, NULL, TRACE_INPUT);
   _trace_stringlen ("SQLSMALLINT", cbDSN);
   _trace_string_w (szUID, cbUID, NULL, TRACE_INPUT);
-  _trace_stringlen ("SQLSMALLINT", cbDSN);
+  _trace_stringlen ("SQLSMALLINT", cbUID);
   _trace_string_w (szAuthStr, SQL_NTS, NULL, TRACE_INPUT);
   _trace_stringlen ("SQLSMALLINT", cbAuthStr);
 }
